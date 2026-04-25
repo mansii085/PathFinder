@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pathfinder — graph search, visualised</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="frame">
+  <header>
+    <div>
+      <div class="wordmark">Pathfinder</div>
+      <div class="tagline">Graph search, visualised</div>
+    </div>
+    <div id="status">Draw walls · run search</div>
+  </header>
+
+  <div class="controls">
+    <div class="algo-group" role="tablist">
+      <button class="algo-btn active" data-algo="bfs">BFS</button>
+      <button class="algo-btn" data-algo="dfs">DFS</button>
+      <button class="algo-btn" data-algo="dijkstra">Dijkstra</button>
+    </div>
+    <button class="btn run" id="runBtn">Run</button>
+    <button class="btn" id="clearPathBtn">Clear path</button>
+    <button class="btn" id="clearWallsBtn">Clear walls</button>
+    <button class="btn" id="resetBtn">Reset</button>
+  </div>
+
+  <div class="legend">
+    <div class="legend-item"><div class="legend-swatch" style="background: var(--start)"></div>Start</div>
+    <div class="legend-item"><div class="legend-swatch" style="background: var(--end)"></div>End</div>
+    <div class="legend-item"><div class="legend-swatch" style="background: var(--wall)"></div>Wall</div>
+    <div class="legend-item"><div class="legend-swatch" style="background: var(--visited)"></div>Visited</div>
+    <div class="legend-item"><div class="legend-swatch" style="background: var(--path)"></div>Path</div>
+  </div>
+
+  <div class="grid-frame">
+    <div id="grid"></div>
+  </div>
+
+  <footer>
+    <div>Click and drag to draw walls. Drag start or end to move them.</div>
+    <div id="metrics">—</div>
+  </footer>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
